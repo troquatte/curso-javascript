@@ -43,4 +43,4 @@ function Calculadora(num1, num2) {
   };
 }
 
-console.log(Calculadora(10, 5).divisao);
+console.log(Calculadora(10, 5));
