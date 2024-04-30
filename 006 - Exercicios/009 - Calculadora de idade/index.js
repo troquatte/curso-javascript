@@ -4,27 +4,28 @@
 
   exp.: A idade da pessoa é x anos.
 */
-const dataNascimento = "20/12/1991";
+
+let dataNascimento = "20/12/1991";
+dataNascimento = dataNascimento.split("/").reverse();
 
 const hoje = new Date();
-const partes = dataNascimento.split("/").reverse();
 
-if (partes.length !== 3) {
-  throw new Error("Formato de data inválido. Use o formato DD/MM/AAAA.");
+if (dataNascimento.length !== 3) {
+  return console.log("Formato de data inválido. Use o formato DD/MM/AAAA");
 }
 
-const nascimento = new Date(partes.join("-"));
+dataNascimento = new Date(dataNascimento.join("-"));
 
-let idade = hoje.getFullYear() - nascimento.getFullYear();
+let idade = hoje.getFullYear() - dataNascimento.getFullYear();
 
-const mesHoje = hoje.getMonth() + 1;
-const mesNascimento = nascimento.getMonth() + 1;
+const mesAtual = hoje.getMonth() + 1;
+const mesNascimento = dataNascimento.getMonth() + 1;
 
 if (
-  mesHoje < mesNascimento ||
-  (mesHoje === mesNascimento && hoje.getDate() < nascimento.getDate())
+  mesAtual < mesNascimento ||
+  (mesAtual === mesNascimento && hoje.getDate() < dataNascimento.getDate())
 ) {
   idade--;
 }
 
-console.log(`A idade da pessoa é ${idade} anos.`);
+console.log("A idade da pessoa é de " + idade + " anos.");

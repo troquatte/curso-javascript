@@ -4,6 +4,7 @@
   exp.: arara = true
   exp.: dener = false
 */
+
 let palavra = "Arara";
 palavra = palavra.toLowerCase();
 

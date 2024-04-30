@@ -5,13 +5,12 @@
   exp.: Abacate = { total: x, vogais: [x,y,z] }
 */
 
-const minhaString = "Dener São Pedro Troquatte";
-const lowerStr = minhaString.toLowerCase();
+let minhaString = "Dener São Pedro Troquatte";
+minhaString = minhaString.toLowerCase();
 
-const vogais = [...lowerStr].filter((char) =>
-  /[aeiouáéíóúàèìòùãẽĩõũâêîôûäëïöü]/.test(char)
+const vogais = [...minhaString].filter((vogal) =>
+  /[aeiouáéíóúàèìòùãẽĩõũâêîôûäëïöü]/.test(vogal)
 );
 
 const total = vogais.length;
-
 console.log({ total, vogais });
